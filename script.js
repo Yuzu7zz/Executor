@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('button');
     button.onclick = () => window.location.href = 'https://yuzu7zz.github.io/Executor/';
     
-    // สร้างหิมะ
+    // Snow effect
     function createSnowflake() {
         const snowflake = document.createElement('div');
         snowflake.className = 'snowflake';
