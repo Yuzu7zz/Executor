@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('button');
-    button.onclick = () => window.location.href = 'https://social.mtdv.me/watch?v=OgtxS27VNR';
+    button.onclick = () => window.location.href = 'https://social.mtdv.me/giveaways/Demonbuyscr';
     
     // Snow effect
     function createSnowflake() {
