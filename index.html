@@ -1,17 +1,139 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Pink Hub</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>profile Discord</title>
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      padding: 2rem 1rem;
+      background: rgba(0,0,0,0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(255,255,255,0.1);
+      max-width: 400px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin: 0 0 1rem;
+      color: #7289da;
+    }
+    p {
+      font-size: 1rem;
+      margin: 0 auto 1rem;
+      line-height: 1.6;
+    }
+    .discord-info {
+      background: rgba(114,137,218,0.2);
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin: 1rem auto;
+      max-width: 80%;
+    }
+    .btn {
+      display: inline-block;
+      background: #7289da;
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover, .btn:focus {
+      transform: scale(1.05);
+    }
+    .btn:active {
+      transform: scale(0.95);
+    }
+    footer {
+      margin-top: 2rem;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+      z-index: 2;
+    }
+    .snowflakes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .snowflake {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) translateX(10px);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>ยินดีต้อนรับ!</h1>
-        <p>นี่คือเว็บไซต์ตัวอย่างพร้อมเอฟเฟกต์ขั้นสูง คลิกปุ่มด้านล่างเพื่อไปยังหน้าหลัก</p>
-        <button>ไปยัง Executor</button>
+  <div class="snowflakes" id="snowflakes"></div>
+  <div class="header">
+    <img src="https://cdn.discordapp.com/avatars/1361003062541549613/b9f81801940ab9002850a9f34e687c3d?size=1024" alt="รูปโปรไฟล์" class="profile-img">
+    <h1>แนะนำตัวใน Discord</h1>
+    <p>สวัสดีครับ ผมชื่อ ผมชื่อมิกหรือยูซูแล้วแต่จะเรียก<br>ชอบเล่นเกมและชอบในการเขียนโค้ดนิดหน่อย</p>
+    <div class="discord-info">
+      <p><strong>Discord Tag:</strong> username#1234</p>
     </div>
+    <button class="btn">ติดต่อ Facebook</button>
+  </div>
+  <footer>
+    &copy; 2025 สร้างโดย Yuzu7zz
+  </footer>
+  <script>
+    const snowflakes = document.getElementById('snowflakes');
+    for (let i = 0; i < 100; i++) {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      snowflake.style.left = Math.random() * 100 + "vw";
+      snowflake.style.top = Math.random() * 100 + "vh";
+      snowflake.style.width = (Math.random() * 5 + 2) + "px";
+      snowflake.style.height = snowflake.style.width;
+      snowflake.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      snowflakes.appendChild(snowflake);
+    }
+  </script>
 </body>
 </html>
