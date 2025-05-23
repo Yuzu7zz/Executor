@@ -1,6 +1,7 @@
 body {
   font-family: 'Prompt', sans-serif;
   background: #000;
+  background: linear-gradient(135deg, #000 0%, #1a1a2e 100%);
   color: #fff;
   margin: 0;
   padding: 0;
@@ -11,6 +12,7 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .header {
   padding: 2rem 1rem;
   background: rgba(0, 0, 0, 0.7);
@@ -19,24 +21,35 @@ body {
   max-width: 400px;
   margin: 0 auto;
   z-index: 2;
+  animation: pulse 3s infinite;
 }
+
 .profile-img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   margin-bottom: 1rem;
   object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 0 4px #7289da;
 }
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 6px #7289da;
+}
+
 h1 {
   font-size: 1.8rem;
   margin: 0 0 1rem;
   color: #7289da;
 }
+
 p {
   font-size: 1rem;
   margin: 0 auto 1rem;
   line-height: 1.6;
 }
+
 .discord-info {
   background: rgba(114, 137, 218, 0.2);
   padding: 0.8rem;
@@ -44,6 +57,7 @@ p {
   margin: 1rem auto;
   max-width: 80%;
 }
+
 .btn {
   display: inline-block;
   background: #7289da;
@@ -52,22 +66,29 @@ p {
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  transition: all 0.2s;
+  transition: all 0.3s;
   border: none;
   cursor: pointer;
+  box-shadow: 0 0 10px rgba(114, 137, 218, 0.5);
 }
 .btn:hover, .btn:focus {
   transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(114, 137, 218, 0.8);
 }
 .btn:active {
   transform: scale(0.95);
 }
+
 footer {
   margin-top: 2rem;
   padding: 1rem;
   font-size: 0.9rem;
   color: #777;
   z-index: 2;
+  transition: color 0.3s;
+}
+footer:hover {
+  color: #7289da;
 }
 
 /* หิมะตก */
@@ -100,4 +121,22 @@ footer {
     transform: translateY(100vh) translateX(10px);
     opacity: 0;
   }
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% { box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); }
+  50% { box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2); }
+  100% { box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); }
 }
